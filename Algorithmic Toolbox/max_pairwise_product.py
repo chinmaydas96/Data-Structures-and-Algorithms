@@ -1,12 +1,17 @@
-# import pdb
-n = int(input())
-a = [int(x) for x in input().split()]
-assert (len(a) == n)
-high = 0
-for i in range(0, n):
-    for k in range(i + 1, n):
-        if (a[i] * a[k] > high):
-            high = a[i] * a[k]
-            # pdb.set_trace()
+def maximum_pairwise_product():
+    n = int(input())
+    a = [int(x) for x in input().split(' ')]
+    assert(len(a) == n)
 
-print(high)
+    max_index_1 = -1
+    for i in range(0, len(a)):
+        if max_index_1 == -1 or a[max_index_1] < a[i]:
+            max_index_1 = i
+    max_index_2 = -1
+    for i in range(0, len(a)):
+        if (max_index_2 == -1 or a[max_index_2] < a[i]) and (i != max_index_1):
+            max_index_2 = i
+
+    print(a[max_index_2] * a[max_index_1])
+
+maximum_pairwise_product()
