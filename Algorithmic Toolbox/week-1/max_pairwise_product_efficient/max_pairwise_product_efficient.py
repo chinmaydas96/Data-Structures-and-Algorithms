@@ -17,4 +17,5 @@ def maximum_pairwise_product():
 
     print(a[max_index_2] * a[max_index_1])
 
+
 maximum_pairwise_product()

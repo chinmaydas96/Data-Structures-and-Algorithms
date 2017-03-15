@@ -9,7 +9,7 @@ def gcd(a, b):
     return best
 
 
-a, b = (input()).split(" ")
+a, b = input().split(" ")
 a = int(a)
 b = int(b)
 print(gcd(a, b))
