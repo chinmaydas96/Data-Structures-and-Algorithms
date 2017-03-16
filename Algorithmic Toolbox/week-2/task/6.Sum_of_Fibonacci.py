@@ -1,3 +1,6 @@
+n = int(input())
+m = 10
+
 
 def fib(n):
     if n < 2:
@@ -29,12 +32,12 @@ def get_fibonaccihuge(n, m):
         n = remainder
         remainder = n % length
 
-    return fib(n) % m
+    return fib(n + 2) % m
 
 
 if __name__ == '__main__':
-    # input = input()
-    # n, m = map(int, input.split())
-    # print(get_fibonaccihuge(n,m))
-    # print(get_fibonaccihuge(2816213588, 30524))
-    print(get_fibonaccihuge(10, 10))
+    ans = (get_fibonaccihuge(n, m))
+    ans = ans - 1
+    if (ans < 0):
+        ans = ans + 10
+    print (ans)
