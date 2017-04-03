@@ -1,24 +1,17 @@
 # Uses python3
 
 
-no = input().split(" ")
-a = int(no[0])
-b = int(no[1])
-assert (0 <= (a, b) <= 2 * (10 ^ 9)), "a,b out of range"
-best = a * b
-
-
 def gcd(a, b):
-    if (a > b):
-        while (b != 0):
-            a, b = b, a % b
-    return a
+    if b == 0:
+        return a
+    return gcd(b, a % b)
 
 
-h = gcd(a, b)
-sum = a
-while(sum != best):
-    sum = sum + h
-    if(sum % a == 0) and (sum % b == 0):
-        best = sum
-print (sum)
+def lcm(a, b):
+    # For proper division output use '//'
+    return int(a * b) // int(gcd(a, b))
+
+
+if __name__ == '__main__':
+    a, b = map(int, input().split())
+    print(int(lcm(a, b)))

@@ -1,7 +1,8 @@
 # Uses python3
 no = input().split(" ")
-n = int(no[0])
-m = int(no[1])
+a = int(no[0])
+b = int(no[1])
+m = 10
 
 
 def fib(n):
@@ -34,9 +35,19 @@ def get_fibonaccihuge(n, m):
         n = remainder
         remainder = n % length
 
-    return fib(n) % m
+    return fib(n + 2) % m
+
+
+def check(ans):
+    ans = ans - 1
+
+    return ans
 
 
 if __name__ == '__main__':
-    print(get_fibonaccihuge(n, m))
-    # print(get_fibonaccihuge(2816213588, 30524))
+    ans1 = (get_fibonaccihuge(a - 1, m))
+    ans2 = (get_fibonaccihuge(b, m))
+    ans = ans2 - ans1
+    if (ans < 0):
+        ans = ans + 10
+    print (ans)

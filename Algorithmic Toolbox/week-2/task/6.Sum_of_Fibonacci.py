@@ -1,6 +1,7 @@
+# Uses python3
 n = int(input())
 m = 10
-assert (1 <= n <= 10 ^ 14), "n out of range"
+# assert (1 <= n <= 10 ^ 14), "n out of range"
 
 
 def fib(n):
