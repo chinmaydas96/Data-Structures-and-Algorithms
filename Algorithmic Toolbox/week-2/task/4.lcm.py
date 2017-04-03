@@ -4,6 +4,7 @@
 no = input().split(" ")
 a = int(no[0])
 b = int(no[1])
+assert (0 <= (a, b) <= 2 * (10 ^ 9)), "a,b out of range"
 best = a * b
 
 

@@ -3,6 +3,7 @@
 
 
 def fib(n):
+
     if(n <= 1):
         return n
 
@@ -10,5 +11,6 @@ def fib(n):
 
 
 n = int(input())
+assert ((n >= 0) and (n <= 45)), "n should be in range 0 ≤ n ≤ 45"
 
 print(fib(n))

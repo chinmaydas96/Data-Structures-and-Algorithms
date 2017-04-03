@@ -1,6 +1,7 @@
 a, b = input().split(" ")
 a = int(a)
 b = int(b)
+assert (a >= 0 and b >= 0), "a,b should be >= 0"
 
 
 def lcm(a, b):

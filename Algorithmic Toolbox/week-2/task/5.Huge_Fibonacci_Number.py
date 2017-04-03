@@ -2,6 +2,8 @@ no = input().split(" ")
 n = int(no[0])
 m = int(no[1])
 
+assert (1 <= n <= 10 ^ 18 and 2 <= m <= 10 ^ 5), "n,m out of range"
+
 
 def fib(n):
     if n < 2:

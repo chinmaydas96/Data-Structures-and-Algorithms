@@ -12,4 +12,5 @@ def fib(n):
 
 
 n = int(input())
+assert (n >= 0 and n <= 10 ^ 7), "n should be in range 0 ≤ n ≤ 10^7 "
 print(fib(n) % 10)

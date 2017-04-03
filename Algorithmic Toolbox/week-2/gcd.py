@@ -12,4 +12,5 @@ def gcd(a, b):
 a, b = input().split(" ")
 a = int(a)
 b = int(b)
+assert (0 <= (a, b) <= 2 * (10 ^ 9)), "a,b should be >= 0"
 print(gcd(a, b))
