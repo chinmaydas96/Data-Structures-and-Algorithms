@@ -1,10 +1,22 @@
 a = [0, 200, 375, 550, 750, 950]
 fuel  =  []
-i = 0
-while(i < 6):
-	for j in range(0,len(a)):
-		if (a[j] - a[i]) > 400:
-			fuel.append(a[j-1])
+
+n = len(a)
+
+def minRefill(a,n):
+	numRefill = 0
+	currentRefill = 0
+
+	while (currentRefill <= n):
+		lastRefill = currentRefill
+		while (((currentRefill <= n) and (a[currentRefill + 1] -a[lastRefill]<=400))):
+			currentRefill += 1
+		if currentRefill == lastRefill :
 			break
-	i +=1		
-print fuel
+		if currentRefill <= n:
+			numRefill +=1
+		
+	return numRefill		
+
+
+print minRefill(a,n)			
