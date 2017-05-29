@@ -34,7 +34,5 @@ if __name__ == '__main__':
     segments = list(map(lambda x: Segment(
         x[0], x[1]), zip(data[::2], data[1::2])))
 
-    points = optimal_points(segments)
-    print(len(points))
-    for p in points:
-        print(p, end=' ')
+    points = optimal_points(segments) print(len(points)) for p in points:
+    print(p, end=' ')
