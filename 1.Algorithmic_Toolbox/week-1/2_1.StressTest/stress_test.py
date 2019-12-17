@@ -17,7 +17,6 @@ def max_pairwise_product_fast(n, a):
 def max_pairwise_product(n, a):
     global result
     for i in range(0, n):
-        print('first l')
         for j in range(i + 1, n):
             if a[i] * a[j] > result:
                 result = a[i] * a[j]
@@ -55,7 +54,6 @@ while result1 == fast1:
 
         fast1=max_pairwise_optimize(n, a)
         print('Optimized :',fast1, ', Naive : ',result1, "OK")
-        print(a)
-        print('**')
     else:
         print("Wrong Answer")
+print('Wrong answer : ',a)
