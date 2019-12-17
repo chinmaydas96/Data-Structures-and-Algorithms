@@ -1,3 +1,5 @@
+#python3
+
 n = int(input())
 a = [int(x) for x in input().split(' ')]
 assert(len(a) == n)
@@ -13,4 +15,4 @@ def max_pairwise(a, n):
             max2 = a[i]
 
     return max1 * max2
-max_pairwise(a, n)
+print(max_pairwise(a, n))
