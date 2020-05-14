@@ -3,26 +3,26 @@ import sys
 
 
 def compute_min_refills(distance, tank , n  , stops):
+
+
     # write your code here
-	no_of_refills = 0
-	intial_stop = 0
-	current_stop = 0
-	stops.insert(len(stops) + 1, distance)
+    no_of_refills = 0
+    current_stop = 0
+    
+    stops.insert(0, 0)
+    stops.insert(len(stops), distance)
 
+    while(current_stop <= n):
+        last_refill = current_stop
 
-	for i in stops:
-		current_stop = i
-		if current_stop - intial_stop < tank:
-			continue
-		no_of_refills += 1
-		intial_stop = i
-
-	print(intial_stop)
-	if intial_stop == stops[-1]:
-		return no_of_refills
-	else:
-		return -1
-
+        while(current_stop <= n) and (stops[current_stop+1] - stops[last_refill] <= tank):
+            current_stop += 1
+        if current_stop == last_refill:
+            return -1
+        if current_stop <= n:
+            no_of_refills += 1
+    return no_of_refills
+            
 
 if __name__ == '__main__':
 
