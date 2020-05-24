@@ -4,10 +4,21 @@ import sys
 def optimal_summands(n):
     summands = []
     #write your code here
-    list_no = list(range(n))
-    
+    k = n
+    l = 1
 
-    return list_no
+    while (k > 0):
+
+    	if (k <= 2 * l ):
+    		summands.append(k)
+    		k -= k
+    	else:
+    		summands.append(l)
+    		k -= l
+    	l += 1
+
+
+    return summands
 
 if __name__ == '__main__':
     n = int(input())
