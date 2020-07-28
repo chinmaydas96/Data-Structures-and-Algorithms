@@ -4,18 +4,18 @@ import sys
 def optimal_summands(n):
     summands = []
     #write your code here
-    k = n
-    l = 1
+    high = n
+    low = 1
 
-    while (k > 0):
+    while (high > 0):
 
-    	if (k <= 2 * l ):
-    		summands.append(k)
-    		k -= k
+    	if (high <= 2 * low ):
+    		summands.append(high)
+    		high -= high
     	else:
-    		summands.append(l)
-    		k -= l
-    	l += 1
+    		summands.append(low)
+    		high -= low
+    	low += 1
 
 
     return summands
