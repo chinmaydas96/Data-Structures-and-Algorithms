@@ -1,6 +1,5 @@
 # Uses python3
 
-
 def fib(n):
     if n < 2:
         return n
@@ -8,6 +7,7 @@ def fib(n):
     for i in range(n):
         a, b = b, a + b
     return a
+
 
 def get_length(m):
     if m <= 1:
@@ -32,17 +32,17 @@ def get_fibonaccihuge(n, m):
 
     return fib(n) % m
 
-def fib_1(n):
-    old = 0
-    new = 1
-    if n >= 2:
-        for i in range(2, n + 1):
-            new, old = (new + old)%10, new % 10
-        return new
-    else:
+
+def fibonacci_sum_squares_naive(n):
+    if n <= 1:
         return n
 
+    vertical = get_fibonaccihuge(n, 10)
+    horizontal = vertical + get_fibonaccihuge(n-1, 10)
+    # print(vertical , horizontal)
+    return (vertical * horizontal) % 10
+
+
 if __name__ == '__main__':
-    n = int(input())
-    # print(get_fibonaccihuge(n, 10))
-    print(fib_1(n))
+    number = int(input())
+    print(fibonacci_sum_squares_naive(number))
